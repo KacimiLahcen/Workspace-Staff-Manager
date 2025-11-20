@@ -1,0 +1,63 @@
+
+  .overlay {
+    position: fixed; inset: 0;
+    background: rgba(0,0,0,0.4);
+    display: none;
+    justify-content: center; 
+    align-items: center;
+  }
+  .popup {
+    background: #1ea6ee; 
+    padding: 25px; 
+    border-radius: 12px;
+    width: 420px; 
+    max-height: 90vh; 
+    overflow-y: auto;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    position: relative;
+  }
+  .popup h2 { 
+    margin-top:0; 
+}
+  .close-btn {
+    position: absolute; 
+    right:15px; 
+    top:15px;
+    cursor:pointer; 
+    font-size:22px;
+  }
+  input, select {
+    width:100%; 
+    padding:10px; 
+    margin:6px 0 14px;
+    border:1px solid #ddd; 
+    border-radius:6px;
+  }
+  .exp-box {
+    padding: 12px;
+    margin-top: 10px;
+    background: #1ea6ee; 
+    position: relative;
+  }
+  .remove-exp {
+    position: absolute; 
+    right:8px; 
+    top:6px;
+    cursor:pointer; 
+    color:#c00; 
+    font-weight:bold;
+  }
+  button {
+    padding:10px 16px; 
+    border: none; 
+    border-radius:6px;
+    cursor:pointer; 
+    font-size:14px;
+  }
+  .add-btn { 
+    background:#ddd; 
+}
+  .save-btn { 
+    background:#0baf4f; 
+    color:#fff; 
+}

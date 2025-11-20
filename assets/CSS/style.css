@@ -5,7 +5,7 @@ body {
 }
 header {
     width: 100%;
-    background-color: #1c39bb;
+    background-color: #1E3A8A;
     color: white;
     padding: 20px;
     text-align: center;
@@ -14,7 +14,7 @@ header {
 
 /* Sidebar styles */
 .sidebar {
-    background-color: #31528a;
+    background-color: #5780c8;
     color: #fff;
     padding: 20px;
     box-sizing: border-box;
@@ -47,11 +47,11 @@ header {
     padding: 20px;
 } */
 /* .Side-Content{
-    display: flex;
+    display: flex; #2953ff
 
 } */
 .rooms-container {
-    background-color: #2953ff;
+    background-color: rgb(173, 233, 236);
 }
 .roomcontainer {
     display: grid;
@@ -101,33 +101,33 @@ header {
 
 
 #card1 {
-background-image: url('../images/conférence.jpg');
+background-image: url('../../images/conférence.jpg');
 background-size: contain;
 border-radius: 8px;
 
 }
 #card2 {
-background-image: url('../images/Réception.jpg');
+background-image: url('../../images/Réception.jpg');
 background-size: contain;
 border-radius: 8px;
 }
 #card3 {
-background-image: url('../images/serveurs.jpg');
+background-image: url('../../images/serveurs.jpg');
 background-size: contain;
 border-radius: 8px;
 }
 #card6 {
-background-image: url('../images/arch.jpg');
+background-image: url('../../images/arch.jpg');
 background-size: contain;
 border-radius: 8px;
 }
 #card4 {
-background-image: url('../images/security.jpg');
+background-image: url('../../images/security.jpg');
 background-size: contain;
 border-radius: 8px;
 }
 #card5 {
-background-image: url('../images/personnal.jpg');
+background-image: url('../../images/personnal.jpg');
 background-size: contain;
 border-radius: 8px;
 }

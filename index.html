@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Workspace Staff Manager</title>
-    <link rel="stylesheet" href="./assets/style.css">
+    <link rel="stylesheet" href="./assets/CSS/style.css">
+    <link rel="stylesheet" href="./assets/CSS/AddPopUp.css">
 </head>
 <body>
 
@@ -16,7 +17,7 @@
         <h2>Menu</h2>
         <p class="employe">Aucun employees</p>
         <div class="EmployeeContainer">xxxxxxxx</div>
-        <button class="addemployee">+ Ajouter un employé</button>
+        <button class="addemployee" onclick="openPopup()" >+ Ajouter un employé</button>
     </div>
     
     <!-- <div class="main-content">
@@ -100,7 +101,36 @@
         </div>
     </div>
 
+<!-- Addition Popup form -->
+    <div class="overlay" id="overlay">
+  <div class="popup">
+    <span class="close-btn" onclick="closePopup()">×</span>
+
+    <h2>Ajouter un nouvel employé</h2>
+
+    <input placeholder="Nom complet *">
+    <select>
+      <option>Sélectionner un rôle</option>
+    </select>
+
+    <input placeholder="Photo (URL)">
+    <input placeholder="Email *">
+    <input placeholder="Téléphone *">
+
+    <h4>Expériences professionnelles</h4>
+    <button class="add-btn" onclick="addExperience()">+ Ajouter</button>
+
+    <div id="expContainer"></div>
+
+    <br>
+    <button class="save-btn">Ajouter l'employé</button>
+  </div>
+</div>
+
+
 
 </div>
+
+<script src="./assets/JS/AddPopUp.js"></script>
 </body>
 </html>
