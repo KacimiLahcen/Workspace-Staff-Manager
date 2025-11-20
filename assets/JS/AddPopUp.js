@@ -20,7 +20,7 @@ function addExperience(){
     <strong>Expérience ${expCount++}</strong><br>
     <input placeholder="Entreprise">
     <input placeholder="Poste">
-    <input placeholder="Durée">
+    <input placeholder="Durée : (exemple: 2022-2024)">
   `;
   document.getElementById("expContainer").appendChild(box);
 }
