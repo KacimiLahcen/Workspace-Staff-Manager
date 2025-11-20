@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,130 +8,142 @@
     <link rel="stylesheet" href="./assets/CSS/style.css">
     <link rel="stylesheet" href="./assets/CSS/AddPopUp.css">
 </head>
+
 <body>
 
     <header>
         <h1>Workspace Staff Manager</h1>
     </header>
-<div class="Side-Content">
-    <div class="sidebar">
-        <h2>Menu</h2>
-        <p class="employe">Aucun employees</p>
-        <div class="EmployeeContainer">xxxxxxxx</div>
-        <button class="addemployee" onclick="openPopup()" >+ Ajouter un employé</button>
-    </div>
-    
-    <!-- <div class="main-content">
+    <div class="Side-Content">
+        <div class="sidebar">
+            <h2>Menu</h2>
+            <p class="employe">Aucun employees</p>
+        <div class="Horizntl">
+            <div class="EmployeeContainer">
+
+                    <img src="./images/security.jpg" alt="photo" class="employee-photo">
+                    <div class="employee-info">
+                        <h3 class="employee-name">kacimi lahcen</h3>
+                        <p class="employee-role">sécurité</p>
+                    </div>
+
+            </div>
+        </div>
+            <button class="addemployee" onclick="openPopup()">+ Ajouter un employé</button>
+        </div>
+
+        <!-- <div class="main-content">
         <h1>Welcome!</h1>
         <p>This is your main content area.</p>
     </div> -->
 
-    <div class="rooms-container">
-        <!-- <p class="pag">All Rooms Here</p> -->
-        <div class="roomcontainer">
-            <!-- <div class="roomPlace"></div>
+        <div class="rooms-container">
+            <!-- <p class="pag">All Rooms Here</p> -->
+            <div class="roomcontainer">
+                <!-- <div class="roomPlace"></div>
             <div class="roomPlace"></div>
             <div class="roomPlace"></div>
             <div class="roomPlace"></div>
             <div class="roomPlace"></div>
             <div class="roomPlace"></div> -->
 
-             
-        <div class="zone-card" data-zone="conference" data-max="10" id="card1">
-          <div class="zone-header">
-            <h3 class="salle-name">Salle de conférence</h3>
-            <button class="zone-add" data-zone-target="conference">+</button>
-          </div>
 
-          
-          <ul class="zone-list" data-zone-list="conference">
-       
-          </ul>
+                <div class="zone-card" data-zone="conference" data-max="10" id="card1">
+                    <div class="zone-header">
+                        <h3 class="salle-name">Salle de conférence</h3>
+                        <button class="zone-add" data-zone-target="conference">+</button>
+                    </div>
+
+
+                    <ul class="zone-list" data-zone-list="conference">
+
+                    </ul>
+                </div>
+
+                <div class="zone-card" data-zone="reception" data-max="3" id="card2">
+                    <div class="zone-header">
+                        <h3 class="salle-name">Réception</h3>
+                        <button class="zone-add" data-zone-target="reception">+</button>
+                    </div>
+
+
+                    <ul class="zone-list" data-zone-list="reception"></ul>
+                </div>
+
+                <div class="zone-card" data-zone="serveurs" data-max="4" id="card3">
+                    <div class="zone-header">
+                        <h3 class="salle-name">Salle des serveurs</h3>
+                        <button class="zone-add" data-zone-target="serveurs">+</button>
+                    </div>
+
+
+                    <ul class="zone-list" data-zone-list="serveurs"></ul>
+                </div>
+
+                <div class="zone-card" data-zone="securite" data-max="3" id="card4">
+                    <div class="zone-header">
+                        <h3 class="salle-name">Salle de sécurité</h3>
+                        <button class="zone-add" data-zone-target="securite">+</button>
+                    </div>
+
+
+                    <ul class="zone-list" data-zone-list="securite"></ul>
+                </div>
+
+                <div class="zone-card" data-zone="personnel" data-max="15" id="card5">
+                    <div class="zone-header">
+                        <h3 class="salle-name">Salle du personnel</h3>
+                        <button class="zone-add" data-zone-target="personnel">+</button>
+                    </div>
+
+
+                    <ul class="zone-list" data-zone-list="personnel"></ul>
+                </div>
+
+                <div class="zone-card" data-zone="archives" data-max="2" id="card6">
+                    <div class="zone-header">
+                        <h3 class="salle-name">Salle d'archives</h3>
+                        <button class="zone-add" data-zone-target="archives">+</button>
+                    </div>
+
+
+                    <ul class="zone-list" data-zone-list="archives"></ul>
+                </div>
+
+            </div>
         </div>
 
-        <div class="zone-card" data-zone="reception" data-max="3" id="card2">
-          <div class="zone-header">
-            <h3 class="salle-name">Réception</h3>
-            <button class="zone-add" data-zone-target="reception">+</button>
-          </div>
+        <!-- Addition Popup form -->
+        <div class="overlay" id="overlay">
+            <div class="popup">
+                <span class="close-btn" onclick="closePopup()">×</span>
 
-          
-          <ul class="zone-list" data-zone-list="reception"></ul>
+                <h2>Ajouter un nouvel employé</h2>
+
+                <input placeholder="Nom complet *">
+                <select>
+                    <option>Sélectionner un rôle</option>
+                </select>
+
+                <input placeholder="Photo (URL)">
+                <input placeholder="Email *">
+                <input placeholder="Téléphone *">
+
+                <h4>Expériences professionnelles</h4>
+                <button class="add-btn" onclick="addExperience()">+ Ajouter</button>
+
+                <div id="expContainer"></div>
+
+                <br>
+                <button class="save-btn">Ajouter l'employé</button>
+            </div>
         </div>
 
-        <div class="zone-card" data-zone="serveurs" data-max="4" id="card3">
-          <div class="zone-header">
-            <h3 class="salle-name">Salle des serveurs</h3>
-            <button class="zone-add" data-zone-target="serveurs">+</button>
-          </div>
-
-          
-          <ul class="zone-list" data-zone-list="serveurs"></ul>
-        </div>
-
-        <div class="zone-card" data-zone="securite" data-max="3" id="card4">
-          <div class="zone-header">
-            <h3 class="salle-name">Salle de sécurité</h3>
-            <button class="zone-add" data-zone-target="securite">+</button>
-          </div>
-
-          
-          <ul class="zone-list" data-zone-list="securite"></ul>
-        </div>
-
-        <div class="zone-card" data-zone="personnel" data-max="15" id="card5">
-          <div class="zone-header">
-            <h3 class="salle-name">Salle du personnel</h3>
-            <button class="zone-add" data-zone-target="personnel">+</button>
-          </div>
 
 
-          <ul class="zone-list" data-zone-list="personnel"></ul>
-        </div>
-
-        <div class="zone-card" data-zone="archives" data-max="2" id="card6">
-          <div class="zone-header">
-            <h3 class="salle-name">Salle d'archives</h3>
-            <button class="zone-add" data-zone-target="archives">+</button>
-          </div>
-
-          
-          <ul class="zone-list" data-zone-list="archives"></ul>
-        </div>
-
-        </div>
     </div>
 
-<!-- Addition Popup form -->
-    <div class="overlay" id="overlay">
-  <div class="popup">
-    <span class="close-btn" onclick="closePopup()">×</span>
-
-    <h2>Ajouter un nouvel employé</h2>
-
-    <input placeholder="Nom complet *">
-    <select>
-      <option>Sélectionner un rôle</option>
-    </select>
-
-    <input placeholder="Photo (URL)">
-    <input placeholder="Email *">
-    <input placeholder="Téléphone *">
-
-    <h4>Expériences professionnelles</h4>
-    <button class="add-btn" onclick="addExperience()">+ Ajouter</button>
-
-    <div id="expContainer"></div>
-
-    <br>
-    <button class="save-btn">Ajouter l'employé</button>
-  </div>
-</div>
-
-
-
-</div>
-
-<script src="./assets/JS/AddPopUp.js"></script>
+    <script src="./assets/JS/AddPopUp.js"></script>
 </body>
+
 </html>

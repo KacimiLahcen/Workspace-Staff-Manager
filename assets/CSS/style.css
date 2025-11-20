@@ -35,21 +35,43 @@ header {
     background-color: #fdcb02;
     padding: 5px;
     width: fit-content;
+    gap: 12px;
+    border-radius: 12px;
+    font-family: sans-serif;
 }
 .addemployee{
     text-align: center;
 }
 
-/* Main content */
-/* .main-content {
-    display: flex;
-    flex-grow: 1;
-    padding: 20px;
-} */
-/* .Side-Content{
-    display: flex; #2953ff
+.Horizntl{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+.employee-photo {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    border: 2px solid #1E3A8A;
+    object-fit: cover;
+}
 
-} */
+.employee-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.employee-name {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.employee-role {
+    margin: 0;
+    font-size: 13px;
+    color: #000000;
+}
+
 .rooms-container {
     background-color: rgb(173, 233, 236);
 }
