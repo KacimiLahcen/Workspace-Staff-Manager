@@ -63,6 +63,6 @@ function addEmployee() {
 // function OpenDetails(){
 //   let openDet = document.querySelector(".modal");
 //   openDet.style.display = "flex";
-//   console.log(openDet)
+//   console.log(openDet.style.display)
 
 // }

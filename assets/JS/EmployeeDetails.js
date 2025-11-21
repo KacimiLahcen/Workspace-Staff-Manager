@@ -1,17 +1,12 @@
-function OpenDetails(id){
+function OpenDetails(){
   let openDet = document.querySelector(".modal");
   openDet.style.display = "flex";
+
+  openDet.innerHTML = "";
+  
   EmployeeDetails()
   
 }
-
-function CloseDetails(){
-  let close = document.querySelector(".modal");
-  close.style.display = "none";
-}
-
-
-
 function EmployeeDetails(){
   const box = document.createElement("div");
   box.className = "card";
@@ -25,7 +20,7 @@ function EmployeeDetails(){
 
                 <div class="top-section">
                     <div>
-                        <img class="avatar" src="xx" alt="">
+                        <img class="avatar" src="" alt="">
                     </div>
                     <div class="info">
                         <h3>xx</h3>
@@ -68,3 +63,9 @@ function EmployeeDetails(){
 
 
 // CloseDetails();
+
+
+function CloseDetails(){
+  let close = document.querySelector(".modal");
+  close.style.display = "none";
+}
