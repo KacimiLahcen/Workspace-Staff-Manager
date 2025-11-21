@@ -39,6 +39,10 @@ header {
     border-radius: 12px;
     font-family: sans-serif;
 }
+.EmployeeContainer{
+    cursor: pointer;
+}
+
 .addemployee{
     text-align: center;
 }

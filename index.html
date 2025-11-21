@@ -7,6 +7,7 @@
     <title>Workspace Staff Manager</title>
     <link rel="stylesheet" href="./assets/CSS/style.css">
     <link rel="stylesheet" href="./assets/CSS/AddPopUp.css">
+    <link rel="stylesheet" href="./assets/CSS/EmployeeDetails.css">
 </head>
 
 <body>
@@ -18,8 +19,8 @@
         <div class="sidebar">
             <h2>Menu</h2>
             <p class="employe">Aucun employees</p>
-        <div class="Horizntl">
-            <!-- <div class="EmployeeContainer">
+            <div class="Horizntl">
+                <!-- <div class="EmployeeContainer">
 
                     <img src="./images/security.jpg" alt="photo" class="employee-photo">
                     <div class="employee-info">
@@ -32,7 +33,7 @@
                     </div>
 
             </div> -->
-        </div>
+            </div>
             <button class="addemployee" onclick="openPopup()">+ Ajouter un employé</button>
         </div>
 
@@ -112,7 +113,7 @@
             </div>
         </div>
 
-        <!-- Addition Popup form -->
+        <!-- Add employee Popup form -->
         <div class="overlay" id="overlay">
             <div class="popup">
                 <span class="close-btn" onclick="closePopup()">×</span>
@@ -133,7 +134,7 @@
                 <input placeholder="Email *" id="EmployeeEmail">
                 <input placeholder="Téléphone *" id="EmployeePhone">
 
-                <h4>Expériences professionnelles</h4>
+                <h4 >Expériences professionnelles</h4>
                 <button class="add-btn" onclick="addExperience()">+ Ajouter</button>
 
                 <div id="expContainer"></div>
@@ -144,11 +145,66 @@
         </div>
 
 
+        <!-- Show employee details  -->
+        <div class="modal">
+            <div id="modalContent">
+                
+            <!-- <div class="card">
+
+                <div class="header">
+                    <h2>Profil de l'employé</h2>
+                    <span class="close" onclick="CloseDetails()">×</span>
+                </div>
+
+                <div class="top-section">
+                    <div>
+                        <img class="avatar" src="./images/security.jpg" alt="">
+                    </div>
+                    <div class="info">
+                        <h3>LAHCEN KACIMI</h3>
+                        <p class="role">Technicien IT</p>
+                        <p class="unassigned">📌 Non assigné</p>
+                    </div>
+                </div>
+
+                <hr>
+
+                <div class="contact">
+                    <h4>Informations de contact</h4>
+                    <p>@ : kacimi.lahcen88@gmail.com</p>
+                    <p>📞 : +212614153906</p>
+                </div>
+
+                <div class="experience">
+                    <h4>Expériences professionnelles</h4>
+
+                    <div class="exp-box">
+                        <div>
+                            <p class="exp-title">etudiant</p>
+                            <p class="exp-sub">dms</p>
+                        </div>
+                        <span class="year">2023-2024</span>
+                    </div>
+                </div>
+
+                <button class="End-details" onclick="CloseDetails()">Fermer</button>
+
+
+            </div> -->
+            </div>
+
+        </div>
+
+
+
+
+
 
     </div>
 
     <script src="./assets/JS/AddPopUp.js"></script>
     <script src="./assets/JS/EmployeeCards.js"></script>
+    <script src="./assets/JS/EmployeeDetails.js"></script>
 </body>
 
 </html>

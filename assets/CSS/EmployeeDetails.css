@@ -1,0 +1,97 @@
+  body {
+    background: #f0f2f5;
+    font-family: Arial, sans-serif;
+}
+
+.modal {
+    position: fixed;
+    inset: 0;
+    background: rgba(255, 255, 255, 0.5);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.card {
+    background: #30d1fab1;
+    width: 450px;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.close {
+    font-size: 22px;
+    cursor: pointer;
+}
+
+.top-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.avatar {
+    width: 150px;
+    height: 150px;
+    background-size: 50%;
+    border-radius: 50%;
+    margin-right: 15px;
+    background-size: cover;
+}
+
+.info h3 {
+    margin: 0;
+}
+
+.role {
+    margin: 3px 0;
+    color: gray;
+}
+
+.unassigned {
+    color: #d9534f;
+}
+
+.contact, .experience {
+    margin-top: 20px;
+}
+
+.exp-box {
+    background: #f7f7f7;
+    border-radius: 8px;
+    padding: 12px;
+    margin: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.exp-title {
+    font-weight: bold;
+}
+
+.exp-sub {
+    font-size: 13px;
+    color: gray;
+}
+
+.year {
+    font-size: 14px;
+}
+
+.End-details {
+    background: #000;
+    color: white;
+    border: none;
+    padding: 10px 18px;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 5px;
+}

@@ -24,16 +24,18 @@ function addEmployee() {
 
     // crate card
     const newCard = document.createElement("div");
-    newCard.classList.add("EmployeeContainer");
+    // newCard.classList.add("EmployeeContainer");
 
     newCard.innerHTML = `
+            <div class="EmployeeContainer">
         <img src="${photo}" alt="photo" class="employee-photo">
         <div class="employee-info">
-            <h3 class="employee-name">${name}</h3>
+            <h3 class="employee-name">${name} tyest</h3>
             <p class="employee-role">${role}</p>
-           
+            </div>
         </div>
     `;
+    newCard.onclick = OpenDetails
 
     // put the content in its right div
     document.querySelector(".Horizntl").appendChild(newCard);
@@ -52,4 +54,15 @@ function addEmployee() {
 
     // then close form
     closePopup();
+    
+       
+   
 }
+
+
+// function OpenDetails(){
+//   let openDet = document.querySelector(".modal");
+//   openDet.style.display = "flex";
+//   console.log(openDet)
+
+// }
