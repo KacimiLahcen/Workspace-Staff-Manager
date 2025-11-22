@@ -22,6 +22,24 @@ function addEmployee() {
         return;
     }
 
+
+     const experiences = [];
+
+    document.querySelectorAll('#expContainer .exp-box').forEach(exp => {
+        const title = exp.querySelector('.exp-title').value.trim();
+        const sub = exp.querySelector('.exp-sub').value.trim();
+        const year = exp.querySelector('.exp-year').value.trim();
+
+        if (title && sub && year) {
+            experiences.push({ title, sub, year });
+        }
+    });
+
+
+
+
+    
+
     // crate card
     const newCard = document.createElement("div");
     // newCard.classList.add("EmployeeContainer");
@@ -30,12 +48,29 @@ function addEmployee() {
             <div class="EmployeeContainer">
         <img src="${photo}" alt="photo" class="employee-photo">
         <div class="employee-info">
-            <h3 class="employee-name">${name} tyest</h3>
+            <h3 class="employee-name">${name}</h3>
             <p class="employee-role">${role}</p>
             </div>
         </div>
     `;
-    newCard.onclick = OpenDetails
+    // newCard.onclick = OpenDetails
+
+
+    newCard.onclick = () => {
+    OpenDetails({
+        name,
+        role,
+        photo,
+        email,
+        phone,
+        experiences
+    });
+};
+
+
+
+
+
 
     // put the content in its right div
     document.querySelector(".Horizntl").appendChild(newCard);

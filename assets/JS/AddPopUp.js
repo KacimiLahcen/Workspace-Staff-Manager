@@ -18,9 +18,9 @@ function addExperience(){
   box.innerHTML = `
     <span class="remove-exp" onclick="this.parentNode.remove()">×</span>
     <strong>Expérience ${expCount++}</strong><br>
-    <input placeholder="Entreprise">
-    <input placeholder="Poste">
-    <input placeholder="Durée : (exemple: 2022-2024)">
+    <input class="exp-title" placeholder="Entreprise">
+    <input class="exp-sub" placeholder="Poste">
+    <input class="exp-year" placeholder="Durée : (exemple: 2022-2024)">
   `;
   document.getElementById("expContainer").appendChild(box);
 }

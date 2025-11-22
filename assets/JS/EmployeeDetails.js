@@ -1,13 +1,13 @@
-function OpenDetails(){
+function OpenDetails(employee){
   let openDet = document.querySelector(".modal");
   openDet.style.display = "flex";
 
-  openDet.innerHTML = "";
+  openDet.innerHTML = ""; 
   
-  EmployeeDetails()
+  EmployeeDetails(employee)   //employee
   
 }
-function EmployeeDetails(){
+function EmployeeDetails(employee){ //employee
   const box = document.createElement("div");
   box.className = "card";
   box.innerHTML = `
@@ -20,12 +20,12 @@ function EmployeeDetails(){
 
                 <div class="top-section">
                     <div>
-                        <img class="avatar" src="" alt="">
+                        <img class="avatar" src="${employee.photo}" alt="">
                     </div>
                     <div class="info">
-                        <h3>xx</h3>
-                        <p class="role">xx</p>
-                        <p class="unassigned">📌 Non assigné</p>
+                        <h3>${employee.name}</h3>
+                        <p class="role">${employee.role}</p>
+                        <p class="unassigned">${employee.role === "Non Assigné" ? "📌 Non assigné" : ""}</p>
                     </div>
                 </div>
 
@@ -33,22 +33,28 @@ function EmployeeDetails(){
 
                 <div class="contact">
                     <h4>Informations de contact</h4>
-                    <p>@ : kacimi.lahcen88@gmail.com</p>
-                    <p>📞 : +212614153906</p>
+                    <p>@ : ${employee.email}</p>
+                    <p>📞 : ${employee.phone}</p>
                 </div>
 
                 <div class="experience">
                     <h4>Expériences professionnelles</h4>
 
+                    ${employee.experiences.length > 0 
+                    ? employee.experiences.map(exp => `
+
                     <div class="exp-box">
                         <div>
-                            <p class="exp-title">etudiant</p>
-                            <p class="exp-sub">dms</p>
+                            <p class="exp-title">${exp.title}</p>
+                            <p class="exp-sub">${exp.sub}</p>
                         </div>
-                        <span class="year">2023-2024</span>
+                        <span class="exp-year">${exp.year}</span>
                     </div>
+                    
                 </div>
-
+                 `).join("")
+            : `<p>Aucune expérience disponible.</p>`
+        }
                 <button class="End-details" onclick="CloseDetails()">Fermer</button>
 
 
@@ -59,8 +65,6 @@ function EmployeeDetails(){
 //   OpenDetails();
 
 }
-
-
 
 // CloseDetails();
 
