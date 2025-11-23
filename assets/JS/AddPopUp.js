@@ -23,4 +23,18 @@ function addExperience(){
     <input class="exp-year" placeholder="Durée : (exemple: 2022-2024)">
   `;
   document.getElementById("expContainer").appendChild(box);
+
+  
 }
+
+
+  function ResetExpCount () {
+    const ExpContainer = document.getElementById("expContainer");
+    // ExpContainer.innerHTML= "";
+
+    expCount = 1;
+  }
+
+  const AddemployeeBtn = document.querySelector(".save-btn");
+  
+  AddemployeeBtn.addEventListener("click", ResetExpCount);
