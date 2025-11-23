@@ -5,6 +5,7 @@ const EmployeeEmail = document.getElementById("EmployeeEmail");
 const EmployeePhone = document.getElementById("EmployeePhone");
 const expContainer = document.getElementById("expContainer");
 
+                let allWorkers = [];   //for the rooms manaagement
 
 document.querySelector(".save-btn").addEventListener("click", addEmployee);
 
@@ -56,16 +57,38 @@ function addEmployee() {
     // newCard.onclick = OpenDetails
 
 
-    newCard.onclick = () => {
-    OpenDetails({
-        name,
-        role,
-        photo,
-        email,
-        phone,
-        experiences
-    });
+//     newCard.onclick = () => OpenDetails(worker); {
+//     OpenDetails({
+//         name,
+//         role,
+//         photo,
+//         email,
+//         phone,
+//         experiences
+//     });
+// };
+
+newCard.addEventListener("click", () => {
+    OpenDetails(worker);
+});
+
+
+
+        // collect worker
+const worker = {
+    id: Date.now(),
+    name,
+    role,
+    photo,
+    email,
+    phone,
+    experiences,
+    zone: null
 };
+
+// store in memory
+allWorkers.push(worker);
+
 
 
 

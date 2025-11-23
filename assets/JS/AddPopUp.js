@@ -17,10 +17,10 @@ function addExperience(){
   box.className = "exp-box";
   box.innerHTML = `
     <span class="remove-exp" onclick="this.parentNode.remove()">×</span>
-    <strong>Expérience ${expCount++}</strong><br>
+    <strong>Expérience ${expCount++}</strong>
     <input class="exp-title" placeholder="Entreprise">
     <input class="exp-sub" placeholder="Poste">
-    <input class="exp-year" placeholder="Durée : (exemple: 2022-2024)">
+    <input class="exp-year" placeholder="Durée:(ex:2022-24)" style="width:120px">
   `;
   document.getElementById("expContainer").appendChild(box);
 
