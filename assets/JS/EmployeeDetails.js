@@ -5,6 +5,9 @@ function OpenDetails(employee){
   openDet.innerHTML = ""; 
   
   EmployeeDetails(employee)   //employee
+
+    
+                        // <p class="unassigned">${employee.role === "Non Assigné" ? "📌 Non assigné" : ""}</p>
   
 }
 function EmployeeDetails(employee){ //employee
@@ -25,7 +28,7 @@ function EmployeeDetails(employee){ //employee
                     <div class="info">
                         <h3>${employee.name}</h3>
                         <p class="role">${employee.role}</p>
-                        <p class="unassigned">${employee.role === "Non Assigné" ? "📌 Non assigné" : ""}</p>
+                        <p class="unassigned">${employee.zone === null ? "📌 Non assigné" : "📌" + employee.zone}</p>
                     </div>
                 </div>
 

@@ -121,6 +121,7 @@ header {
     background-repeat: no-repeat;
     border-radius: 10px;
     padding: 0;
+
 }
 
 
@@ -165,7 +166,7 @@ border-radius: 8px;
 }
 
 .zone-add {
-  background: #b2f5bb;
+  background: #00ff22;
   border: none;
   border-radius: 6px;
   padding: 5px 10px;
@@ -180,10 +181,15 @@ border-radius: 8px;
 .zone-list {
   list-style: none;
   margin-top: 10px;
+  /* width: 88%;
+  height: 30%;
+  background-color: red; */
 }
 .salle-name {
  font-family:Arial, Helvetica, sans-serif;
-    color: #fccb01;
-    margin-top: 4px;
+    color:  black;
+    margin-top: 0px;
+    padding: 5px;
+    background-color: #fccb01 ;
 
 }

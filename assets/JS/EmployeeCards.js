@@ -18,10 +18,50 @@ function addEmployee() {
     const email = EmployeeEmail.value.trim();
     const phone = EmployeePhone.value.trim();
 
-    if (name === "" || email === "" || phone === "" || role === "Sélectionner un rôle") {
-        alert("Tous les champs sont obligatoires !");
+    // if (name === "" || email === "" || phone === "" || role === "Sélectionner un rôle") {
+    //     alert("Tous les champs sont obligatoires !");
+    //     return;
+    // }
+
+
+
+
+
+
+
+const nameRegex = /^[A-Za-zÀ-ÿ\s]+$/;
+const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+// const emailRegex = /^[^\s@]+@[^\s@]+\.youcode+$/;
+const phoneRegex = /^06[0-9]{8,}$/;
+
+if (!nameRegex.test(name)) {
+    alert("Le nom doit inclure seulement des lettres !");
+    return;
+}
+
+if (!emailRegex.test(email)) {
+    alert("Email invalide !");
+    return;
+}
+
+if (!phoneRegex.test(phone)) {
+    alert("Le numéro doit débuter par 06 et contenir au moins 10 chiffres !");
+    return;
+}
+
+ if ( role === "Sélectionner un rôle") {
+        alert("Sélectionner un rôle !");
         return;
     }
+
+
+
+
+
+
+
+
+
 
 
      const experiences = [];

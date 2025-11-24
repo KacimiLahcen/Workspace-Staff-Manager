@@ -1,27 +1,29 @@
 // zone access rules
 const zoneAccess = {
     conference: "all",
-    reception: ["Réceptionniste", "Manager"],
-    serveurs: ["Technicien-IT", "Manager"],
-    securite: ["Agent-sécurité", "Manager"],
+    reception: ["Réceptionniste", "Manager","Nettoyage"],
+    serveurs: ["Technicien-IT", "Manager","Nettoyage"],
+    securite: ["Agent-sécurité", "Manager","Nettoyage"],
     personnel: "all",
-    archives: "all_except_Nettoyage"
+    // archives: "all_except_Nettoyage"
+    archives: "only_manager"
 };
 
 
-// ❗ Check access
+// Check access
 function canEnter(worker, zone) {
     const rule = zoneAccess[zone];
 
     if (rule === "all") return true;
-    if (rule === "all_except_Nettoyage") return worker.role !== "Nettoyage";
+    // if (rule === "all_except_Nettoyage") return worker.role !== "Nettoyage";
+    if (rule === "only_manager") return worker.role === "Manager";
     if (Array.isArray(rule)) return rule.includes(worker.role);
 
     return false;
 }
 
 
-// ❗ Open selector popup
+// Open selector popup
 let selectedZone = null;
 
 document.querySelectorAll(".zone-add").forEach(btn => {
@@ -38,8 +40,8 @@ function openAssignPopup(zone) {
     listDiv.innerHTML = "";
 
     // Get workers who are unassigned + allowed
-    const available = allWorkers.filter(w =>
-        w.zone === null && canEnter(w, zone)
+    const available = allWorkers.filter(workerX =>
+        workerX.zone === null && canEnter(workerX, zone)
     );
 
     if (available.length === 0) {
@@ -52,7 +54,7 @@ function openAssignPopup(zone) {
 
         item.innerHTML = `
             <span>${worker.name} → ${worker.role}</span>
-            <button onclick="assignWorker(${worker.id}, '${zone}')" style="color:green; font-weight:10px;">✔</button>
+            <button onclick="assignWorker(${worker.id}, '${zone}')" style="color:white; background-color:green; font-weight:10px;">✔</button>
         `;
 
         listDiv.appendChild(item);
@@ -67,9 +69,9 @@ function closeAssignPopup() {
 }
 
 
-// ❗ Assign worker to zone
+// Assign worker to zone
 function assignWorker(id, zone) {
-    const worker = allWorkers.find(w => w.id === id);
+    const worker = allWorkers.find(workerX => workerX.id === id);
     if (!worker) return;
 
     // set zone
@@ -83,7 +85,7 @@ function assignWorker(id, zone) {
     li.setAttribute("data-worker-id", id);
 
     li.innerHTML = `
-    <div style="padding : 5px; width:fit-content; background-color: white;  border: 4px solid yellow; display:flex; flex-direction:row;"> 
+    <div style="padding : 5px; width:fit-content; background-color: white;  border: 4px solid yellow; display:flex; flex-direction:row; margin-bottom: 10px;"> 
             <img src="${worker.photo}" style="width: 48px; height: 48px; border-radius: 50%;">
     
             <p> ${worker.name}   </p>
@@ -98,9 +100,10 @@ function assignWorker(id, zone) {
 }
 
 
-// ❗ Remove worker from zone
+
+// Remove worker from zone
 function removeWorker(id, zone) {
-    const worker = allWorkers.find(w => w.id === id);
+    const worker = allWorkers.find(workerX => workerX.id === id);
     if (!worker) return;
 
     worker.zone = null; // unassign
